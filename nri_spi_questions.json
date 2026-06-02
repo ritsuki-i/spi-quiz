@@ -1,0 +1,934 @@
+{
+  "metadata": {
+    "title": "NRIインターン向け SPIテストセンター想定 弱点最適化問題データ",
+    "version": "1.0.0",
+    "createdFor": "Ritsuki Ishikawa",
+    "goal": "SPIテストセンター高得点指標6以上を狙うための本番想定演習",
+    "note": "既存のSPI問題の複製ではなく，弱点対策用のオリジナル問題データ。"
+  },
+  "categories": [
+    {
+      "id": "order_reasoning",
+      "label": "順番推理",
+      "priority": "S"
+    },
+    {
+      "id": "win_loss",
+      "label": "勝敗推理",
+      "priority": "S"
+    },
+    {
+      "id": "checkbox",
+      "label": "チェックボックス",
+      "priority": "S"
+    },
+    {
+      "id": "concentration",
+      "label": "食塩水・濃度",
+      "priority": "A"
+    },
+    {
+      "id": "average",
+      "label": "平均から推論",
+      "priority": "A"
+    },
+    {
+      "id": "venn",
+      "label": "ベン図・包含関係",
+      "priority": "A"
+    },
+    {
+      "id": "reading",
+      "label": "言語長文",
+      "priority": "A"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q001",
+      "section": "nonverbal",
+      "category": "order_reasoning",
+      "weaknessTarget": "順番推理",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 90,
+      "answerType": "single",
+      "prompt": "A, B, C, D, Eの5人が横一列に並んでいる。AはBより左，CはAより右，DはBより右，EはCより右にいる。このとき，必ず正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "BはCより右にいる"
+        },
+        {
+          "id": "B",
+          "text": "AはEより左にいる"
+        },
+        {
+          "id": "C",
+          "text": "DはCより右にいる"
+        },
+        {
+          "id": "D",
+          "text": "CはBより左にいる"
+        }
+      ],
+      "correctAnswer": "B",
+      "patternType": "順番型",
+      "firstMove": "A < C < E をまず確定する。BとDはAとの相対関係しかないため，Cとの関係は固定しない。",
+      "explanation": "AはCより左，EはCより右なので A < C < E。したがってAはEより左にいる。BやDとCの関係は確定しない。"
+    },
+    {
+      "id": "Q002",
+      "section": "nonverbal",
+      "category": "order_reasoning",
+      "weaknessTarget": "順番推理",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 90,
+      "answerType": "single",
+      "prompt": "5人P,Q,R,S,Tが発表する。PはQより前，RはPより後，SはQより後，TはRより前に発表する。必ずいえるものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "QはRより前"
+        },
+        {
+          "id": "B",
+          "text": "PはSより前"
+        },
+        {
+          "id": "C",
+          "text": "TはRより前"
+        },
+        {
+          "id": "D",
+          "text": "SはRより後"
+        }
+      ],
+      "correctAnswer": "C",
+      "patternType": "順番型",
+      "firstMove": "「前」を < として条件を並べる。P<Qではなく P < Q と表す。",
+      "explanation": "条件そのものからTはRより前である。QとR，PとS，SとRの関係は確定しない。"
+    },
+    {
+      "id": "Q003",
+      "section": "nonverbal",
+      "category": "order_reasoning",
+      "weaknessTarget": "順番推理",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 100,
+      "answerType": "single",
+      "prompt": "A,B,C,Dの4人が身長順に並ぶ。AはBより高く，CはAより低く，DはBより高い。次のうち必ず正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "DはAより高い"
+        },
+        {
+          "id": "B",
+          "text": "BはCより高い"
+        },
+        {
+          "id": "C",
+          "text": "AはCより高い"
+        },
+        {
+          "id": "D",
+          "text": "CはDより高い"
+        }
+      ],
+      "correctAnswer": "C",
+      "patternType": "順番型",
+      "firstMove": "高い順の不等号にする。A > B，A > C，D > B。",
+      "explanation": "CはAより低いので，AはCより高い。BとC，AとD，CとDの関係は確定しない。"
+    },
+    {
+      "id": "Q004",
+      "section": "nonverbal",
+      "category": "order_reasoning",
+      "weaknessTarget": "順番推理",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 110,
+      "answerType": "single",
+      "prompt": "6冊の本A〜Fを左から右に並べる。AはBのすぐ左，CはDより左，EはAより右，FはCより右にある。Bが左から3番目のとき，必ず正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Aは左から2番目"
+        },
+        {
+          "id": "B",
+          "text": "Eは左から4番目"
+        },
+        {
+          "id": "C",
+          "text": "Cは左から1番目"
+        },
+        {
+          "id": "D",
+          "text": "FはDより右"
+        }
+      ],
+      "correctAnswer": "A",
+      "patternType": "順番型",
+      "firstMove": "「すぐ左」は固定ブロックABにする。Bが3番目ならAは2番目。",
+      "explanation": "AはBのすぐ左で，Bが3番目なのでAは2番目。E,C,D,Fの位置は完全には決まらない。"
+    },
+    {
+      "id": "Q005",
+      "section": "nonverbal",
+      "category": "order_reasoning",
+      "weaknessTarget": "順番推理",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 90,
+      "answerType": "single",
+      "prompt": "A,B,C,D,Eが到着した。AはCより早く，BはAより遅く，DはBより早く，EはCより遅い。必ず正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "AはEより早い"
+        },
+        {
+          "id": "B",
+          "text": "CはBより早い"
+        },
+        {
+          "id": "C",
+          "text": "DはAより早い"
+        },
+        {
+          "id": "D",
+          "text": "BはEより遅い"
+        }
+      ],
+      "correctAnswer": "A",
+      "patternType": "順番型",
+      "firstMove": "早い順に < を使う。A < C < E が確定。",
+      "explanation": "AはCより早く，EはCより遅いので A < C < E。よってAはEより早い。"
+    },
+    {
+      "id": "Q006",
+      "section": "nonverbal",
+      "category": "win_loss",
+      "weaknessTarget": "勝敗推理",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 100,
+      "answerType": "single",
+      "prompt": "A,B,C,Dの4人が総当たりで1回ずつ対戦した。Aは2勝1敗，Bは1勝2敗，Cは3勝0敗だった。このときDの成績はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "0勝3敗"
+        },
+        {
+          "id": "B",
+          "text": "1勝2敗"
+        },
+        {
+          "id": "C",
+          "text": "2勝1敗"
+        },
+        {
+          "id": "D",
+          "text": "3勝0敗"
+        }
+      ],
+      "correctAnswer": "A",
+      "patternType": "勝敗表型",
+      "firstMove": "総当たりは全試合数6，総勝利数も6。既知の勝利数を合計する。",
+      "explanation": "A,B,Cの勝利数は2+1+3=6。4人総当たりの総勝利数は6なので，Dは0勝。"
+    },
+    {
+      "id": "Q007",
+      "section": "nonverbal",
+      "category": "win_loss",
+      "weaknessTarget": "勝敗推理",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 120,
+      "answerType": "single",
+      "prompt": "A,B,C,Dの4人でトーナメントを行った。1回戦はA対B，C対D。AはBに勝ち，優勝者はCだった。必ず正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "CはDに勝った"
+        },
+        {
+          "id": "B",
+          "text": "Dは準優勝した"
+        },
+        {
+          "id": "C",
+          "text": "BはCに負けた"
+        },
+        {
+          "id": "D",
+          "text": "AはDに勝った"
+        }
+      ],
+      "correctAnswer": "A",
+      "patternType": "トーナメント図型",
+      "firstMove": "トーナメントは山形図を書く。Cが優勝するには1回戦でDに勝つ必要がある。",
+      "explanation": "決勝に進むにはCは1回戦でDに勝つ必要がある。準優勝はAなのでB,Dは決勝に出ていない。"
+    },
+    {
+      "id": "Q008",
+      "section": "nonverbal",
+      "category": "win_loss",
+      "weaknessTarget": "勝敗推理",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 120,
+      "answerType": "single",
+      "prompt": "A,B,C,D,Eの5チームが総当たりで1回ずつ試合をした。引き分けはない。Aは4勝，Bは3勝，Cは2勝，Dは1勝だった。Eの勝利数はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "0勝"
+        },
+        {
+          "id": "B",
+          "text": "1勝"
+        },
+        {
+          "id": "C",
+          "text": "2勝"
+        },
+        {
+          "id": "D",
+          "text": "3勝"
+        }
+      ],
+      "correctAnswer": "A",
+      "patternType": "勝敗表型",
+      "firstMove": "5チーム総当たりの試合数は5C2=10。総勝利数も10。",
+      "explanation": "既知の勝利数は4+3+2+1=10。全体の総勝利数は10なのでEは0勝。"
+    },
+    {
+      "id": "Q009",
+      "section": "nonverbal",
+      "category": "win_loss",
+      "weaknessTarget": "勝敗推理",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 100,
+      "answerType": "single",
+      "prompt": "A,B,C,Dが総当たりで対戦した。AはBとCに勝ち，Dに負けた。BはCに勝った。Dは全勝だった。Cの成績はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "0勝3敗"
+        },
+        {
+          "id": "B",
+          "text": "1勝2敗"
+        },
+        {
+          "id": "C",
+          "text": "2勝1敗"
+        },
+        {
+          "id": "D",
+          "text": "3勝0敗"
+        }
+      ],
+      "correctAnswer": "A",
+      "patternType": "勝敗表型",
+      "firstMove": "表を作り，確定した勝敗を埋める。",
+      "explanation": "CはAに負け，Bに負け，Dにも全勝条件により負ける。よって0勝3敗。"
+    },
+    {
+      "id": "Q010",
+      "section": "nonverbal",
+      "category": "win_loss",
+      "weaknessTarget": "勝敗推理",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 130,
+      "answerType": "single",
+      "prompt": "8人トーナメントで，Aは1回戦でBに勝ち，2回戦でCに負けた。Cは決勝でDに負けた。次のうち必ず正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Aは準決勝に進んだ"
+        },
+        {
+          "id": "B",
+          "text": "Cは優勝した"
+        },
+        {
+          "id": "C",
+          "text": "Dは優勝した"
+        },
+        {
+          "id": "D",
+          "text": "BはCに負けた"
+        }
+      ],
+      "correctAnswer": "C",
+      "patternType": "トーナメント図型",
+      "firstMove": "8人トーナメントでは2回戦は準決勝。決勝でDがCに勝ったならDが優勝。",
+      "explanation": "Cは決勝でDに負けているので，Dが優勝。Aは2回戦で負けており決勝には進んでいない。"
+    },
+    {
+      "id": "Q011",
+      "section": "nonverbal",
+      "category": "checkbox",
+      "weaknessTarget": "チェックボックス",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 100,
+      "answerType": "multiple",
+      "prompt": "ある講座の受講者について，次の条件がある。英語を履修している人は数学も履修している。物理を履修している人は英語を履修していない。次のうち必ず正しいものをすべて選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "英語を履修している人は物理を履修していない"
+        },
+        {
+          "id": "B",
+          "text": "数学を履修している人は英語を履修している"
+        },
+        {
+          "id": "C",
+          "text": "物理を履修している人は数学を履修していない"
+        },
+        {
+          "id": "D",
+          "text": "英語を履修していない人は物理を履修している"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "patternType": "条件表型",
+      "firstMove": "命題を矢印で表す。英語→数学，物理→英語でない。",
+      "explanation": "物理→英語でない，の対偶は英語→物理でない。よってAは必ず正しい。B,C,Dは必ずとはいえない。"
+    },
+    {
+      "id": "Q012",
+      "section": "nonverbal",
+      "category": "checkbox",
+      "weaknessTarget": "チェックボックス",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 120,
+      "answerType": "multiple",
+      "prompt": "商品A,B,C,Dについて，次の条件がある。Aを買う人はBも買う。Cを買う人はDを買わない。Bを買わない人はCを買う。次のうち必ず正しいものをすべて選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Aを買う人はCを買う"
+        },
+        {
+          "id": "B",
+          "text": "Aを買う人はBを買う"
+        },
+        {
+          "id": "C",
+          "text": "Bを買わない人はDを買わない"
+        },
+        {
+          "id": "D",
+          "text": "Cを買う人はBを買わない"
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C"
+      ],
+      "patternType": "条件表型",
+      "firstMove": "A→B，C→非D，非B→C を矢印で整理する。",
+      "explanation": "Bは条件そのもの。非B→CかつC→非Dなので，非B→非D。AやDは成立しない。"
+    },
+    {
+      "id": "Q013",
+      "section": "nonverbal",
+      "category": "checkbox",
+      "weaknessTarget": "チェックボックス",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 100,
+      "answerType": "multiple",
+      "prompt": "5人A〜Eについて，赤いカードを持つ人は青いカードも持つ。黄色いカードを持つ人は青いカードを持たない。次のうち必ず正しいものをすべて選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "赤いカードを持つ人は黄色いカードを持たない"
+        },
+        {
+          "id": "B",
+          "text": "青いカードを持つ人は赤いカードを持つ"
+        },
+        {
+          "id": "C",
+          "text": "黄色いカードを持つ人は赤いカードを持たない"
+        },
+        {
+          "id": "D",
+          "text": "青いカードを持たない人は黄色いカードを持つ"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "C"
+      ],
+      "patternType": "条件表型",
+      "firstMove": "赤→青，黄→非青。対偶で青ならない関係を確認する。",
+      "explanation": "赤→青であり，黄→非青なので，赤と黄は同時に成立しない。よってA,Cが必ず正しい。"
+    },
+    {
+      "id": "Q014",
+      "section": "nonverbal",
+      "category": "checkbox",
+      "weaknessTarget": "チェックボックス",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 120,
+      "answerType": "multiple",
+      "prompt": "ある試験について，合格者は面接を受けている。推薦を受けた人は作文を提出している。作文を提出していない人について，必ず正しいものをすべて選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "推薦を受けていない"
+        },
+        {
+          "id": "B",
+          "text": "面接を受けていない"
+        },
+        {
+          "id": "C",
+          "text": "合格していない"
+        },
+        {
+          "id": "D",
+          "text": "合格している可能性は必ずない"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "patternType": "条件表型",
+      "firstMove": "推薦→作文。作文なしから対偶で非推薦を導く。",
+      "explanation": "推薦を受けた人は作文を提出しているので，作文を提出していない人は推薦を受けていない。面接や合格との関係は確定しない。"
+    },
+    {
+      "id": "Q015",
+      "section": "nonverbal",
+      "category": "concentration",
+      "weaknessTarget": "食塩水・濃度",
+      "difficultyIndicator": 5,
+      "timeLimitSec": 90,
+      "answerType": "numeric",
+      "prompt": "8%の食塩水200gに含まれる食塩は何gか。",
+      "choices": [],
+      "correctAnswer": 16,
+      "tolerance": 0,
+      "patternType": "濃度公式型",
+      "firstMove": "食塩量 = 食塩水の量 × 濃度。",
+      "explanation": "200×0.08=16g。"
+    },
+    {
+      "id": "Q016",
+      "section": "nonverbal",
+      "category": "concentration",
+      "weaknessTarget": "食塩水・濃度",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 100,
+      "answerType": "numeric",
+      "prompt": "10%の食塩水100gと4%の食塩水200gを混ぜると，濃度は何%か。小数第1位までで答えよ。",
+      "choices": [],
+      "correctAnswer": 6.0,
+      "tolerance": 0.05,
+      "patternType": "濃度公式型",
+      "firstMove": "食塩量をそれぞれ出して合計する。",
+      "explanation": "食塩は10g+8g=18g，全体は300g。18/300=0.06なので6.0%。"
+    },
+    {
+      "id": "Q017",
+      "section": "nonverbal",
+      "category": "concentration",
+      "weaknessTarget": "食塩水・濃度",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 120,
+      "answerType": "numeric",
+      "prompt": "5%の食塩水300gに食塩を何g加えると，10%の食塩水になるか。",
+      "choices": [],
+      "correctAnswer": 16.7,
+      "tolerance": 0.1,
+      "patternType": "濃度公式型",
+      "firstMove": "加える食塩をx gと置き，食塩量/全体量=0.10。",
+      "explanation": "元の食塩は15g。加える食塩をxとすると(15+x)/(300+x)=0.10。15+x=30+0.1x，0.9x=15，x=16.7g。"
+    },
+    {
+      "id": "Q018",
+      "section": "nonverbal",
+      "category": "average",
+      "weaknessTarget": "平均から推論",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 90,
+      "answerType": "numeric",
+      "prompt": "5人の平均点は72点だった。そこに1人加わると6人の平均点が75点になった。加わった人の点数は何点か。",
+      "choices": [],
+      "correctAnswer": 90,
+      "tolerance": 0,
+      "patternType": "平均合計型",
+      "firstMove": "合計 = 平均 × 人数。",
+      "explanation": "元の合計は72×5=360。6人の合計は75×6=450。加わった人は90点。"
+    },
+    {
+      "id": "Q019",
+      "section": "nonverbal",
+      "category": "average",
+      "weaknessTarget": "平均から推論",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 100,
+      "answerType": "numeric",
+      "prompt": "A,B,Cの平均は60，A,B,Dの平均は64，Cは54である。Dはいくつか。",
+      "choices": [],
+      "correctAnswer": 66,
+      "tolerance": 0,
+      "patternType": "平均合計型",
+      "firstMove": "A+B+CとA+B+Dの合計を比較する。",
+      "explanation": "A+B+C=180。C=54なのでA+B=126。A+B+D=192だからD=66。"
+    },
+    {
+      "id": "Q020",
+      "section": "nonverbal",
+      "category": "venn",
+      "weaknessTarget": "ベン図・包含関係",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 90,
+      "answerType": "single",
+      "prompt": "PであるものはすべてQである。RであるものはPではない。次のうち必ず正しいものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "RであるものはQではない"
+        },
+        {
+          "id": "B",
+          "text": "QであるものはPである"
+        },
+        {
+          "id": "C",
+          "text": "PであるものはRではない"
+        },
+        {
+          "id": "D",
+          "text": "QでないものはRである"
+        }
+      ],
+      "correctAnswer": "C",
+      "patternType": "ベン図型",
+      "firstMove": "P⊂Q，R∩P=空としてベン図を書く。",
+      "explanation": "RはPではないので，PであるものはRではない。RとQの関係は不明。"
+    },
+    {
+      "id": "Q021",
+      "section": "nonverbal",
+      "category": "position",
+      "weaknessTarget": "位置関係",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 100,
+      "answerType": "single",
+      "prompt": "A,B,C,Dが円形のテーブルに座る。Aの右隣はB，Cの左隣はDである。4人だけが座るとき，必ず正しいものはどれか。右左は全員から見た方向とする。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Aの向かいはC"
+        },
+        {
+          "id": "B",
+          "text": "Bの向かいはD"
+        },
+        {
+          "id": "C",
+          "text": "Cの右隣はA"
+        },
+        {
+          "id": "D",
+          "text": "Dの左隣はB"
+        }
+      ],
+      "correctAnswer": "A",
+      "patternType": "位置関係型",
+      "firstMove": "円卓は1人を固定して右回りに配置する。",
+      "explanation": "Aの右隣をBに固定すると，残りC,Dは条件Cの左隣がDとなるように決まる。Aの向かいはC。"
+    },
+    {
+      "id": "Q022",
+      "section": "nonverbal",
+      "category": "checkbox",
+      "weaknessTarget": "チェックボックス",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 120,
+      "answerType": "multiple",
+      "prompt": "A,B,C,Dの4人について，Aが参加するならBも参加する。Cが参加するならAは参加しない。Dが参加しないならCが参加する。Dが参加しない場合，必ず正しいものをすべて選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Cは参加する"
+        },
+        {
+          "id": "B",
+          "text": "Aは参加しない"
+        },
+        {
+          "id": "C",
+          "text": "Bは参加しない"
+        },
+        {
+          "id": "D",
+          "text": "Dは参加する"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B"
+      ],
+      "patternType": "条件表型",
+      "firstMove": "D不参加→C参加→A不参加 と連鎖させる。",
+      "explanation": "Dが参加しないならCが参加する。Cが参加するならAは参加しない。Bについては不明。"
+    },
+    {
+      "id": "Q023",
+      "section": "nonverbal",
+      "category": "order_reasoning",
+      "weaknessTarget": "順番推理",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 120,
+      "answerType": "single",
+      "prompt": "X,Y,Z,Wが1位から4位まで順位を取った。XはYより上，ZはXより下，WはYより上である。Yが3位のとき，Zの順位としてあり得るものはどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "1位"
+        },
+        {
+          "id": "B",
+          "text": "2位"
+        },
+        {
+          "id": "C",
+          "text": "3位"
+        },
+        {
+          "id": "D",
+          "text": "4位"
+        }
+      ],
+      "correctAnswer": "D",
+      "patternType": "順番型",
+      "firstMove": "Y=3位を固定し，XとWはYより上なので1位・2位。ZはXより下。",
+      "explanation": "Yが3位なら，XとWは1位か2位。ZはXより下で，空いているのは4位のみ。"
+    },
+    {
+      "id": "Q024",
+      "section": "nonverbal",
+      "category": "win_loss",
+      "weaknessTarget": "勝敗推理",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 120,
+      "answerType": "single",
+      "prompt": "A,B,C,Dの4人が総当たりで対戦し，Aは2勝，Bは2勝，Cは1勝だった。DはAに勝った。このとき，Dの勝利数はどれか。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "0勝"
+        },
+        {
+          "id": "B",
+          "text": "1勝"
+        },
+        {
+          "id": "C",
+          "text": "2勝"
+        },
+        {
+          "id": "D",
+          "text": "3勝"
+        }
+      ],
+      "correctAnswer": "B",
+      "patternType": "勝敗表型",
+      "firstMove": "総勝利数6からDの勝利数を出す。",
+      "explanation": "A,B,Cの勝利数は2+2+1=5。全体は6勝なのでDは1勝。DがAに勝ったという条件とも一致する。"
+    },
+    {
+      "id": "Q025",
+      "section": "verbal",
+      "category": "word_relation",
+      "weaknessTarget": "二語の関係",
+      "difficultyIndicator": 5,
+      "timeLimitSec": 45,
+      "answerType": "single",
+      "prompt": "『医師：病院』と同じ関係にあるものを選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "教師：学校"
+        },
+        {
+          "id": "B",
+          "text": "学生：教科書"
+        },
+        {
+          "id": "C",
+          "text": "警察：法律"
+        },
+        {
+          "id": "D",
+          "text": "料理：台所"
+        }
+      ],
+      "correctAnswer": "A",
+      "patternType": "二語関係型",
+      "firstMove": "職業と主な勤務場所の関係を見る。",
+      "explanation": "医師が主に病院で働くように，教師は主に学校で働く。"
+    },
+    {
+      "id": "Q026",
+      "section": "verbal",
+      "category": "word_relation",
+      "weaknessTarget": "二語の関係",
+      "difficultyIndicator": 5,
+      "timeLimitSec": 45,
+      "answerType": "single",
+      "prompt": "『種子：発芽』と同じ関係にあるものを選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "卵：孵化"
+        },
+        {
+          "id": "B",
+          "text": "水：蒸発"
+        },
+        {
+          "id": "C",
+          "text": "本：読書"
+        },
+        {
+          "id": "D",
+          "text": "紙：印刷"
+        }
+      ],
+      "correctAnswer": "A",
+      "patternType": "二語関係型",
+      "firstMove": "対象が成長・変化して次段階に進む関係を見る。",
+      "explanation": "種子が発芽するように，卵は孵化する。"
+    },
+    {
+      "id": "Q027",
+      "section": "verbal",
+      "category": "vocabulary",
+      "weaknessTarget": "語句の意味",
+      "difficultyIndicator": 5,
+      "timeLimitSec": 45,
+      "answerType": "single",
+      "prompt": "『示唆』の意味として最も近いものを選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "はっきり命令すること"
+        },
+        {
+          "id": "B",
+          "text": "それとなく示すこと"
+        },
+        {
+          "id": "C",
+          "text": "強く反対すること"
+        },
+        {
+          "id": "D",
+          "text": "完全に証明すること"
+        }
+      ],
+      "correctAnswer": "B",
+      "patternType": "語句意味型",
+      "firstMove": "文脈で『〜が示唆される』を思い出す。",
+      "explanation": "示唆は，直接断定せず，それとなく示すこと。"
+    },
+    {
+      "id": "Q028",
+      "section": "verbal",
+      "category": "reading",
+      "weaknessTarget": "長文読解",
+      "difficultyIndicator": 6,
+      "timeLimitSec": 120,
+      "answerType": "single",
+      "passage": "新しい技術を導入するとき，単に性能が高いという理由だけで採用を決めるのは危険である。実際の業務では，運用コスト，既存システムとの相性，利用者の習熟度など，性能以外の要因が成果を左右する。したがって，技術選定では，目的に対してどの要素が制約になるのかを明確にしたうえで判断する必要がある。",
+      "prompt": "本文の主旨として最も適切なものを選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "新技術は性能が高ければ必ず導入すべきである"
+        },
+        {
+          "id": "B",
+          "text": "技術選定では性能以外の制約も考慮すべきである"
+        },
+        {
+          "id": "C",
+          "text": "既存システムは新技術より常に優れている"
+        },
+        {
+          "id": "D",
+          "text": "利用者の習熟度は成果に関係しない"
+        }
+      ],
+      "correctAnswer": "B",
+      "patternType": "長文主旨型",
+      "firstMove": "逆接・結論部分『したがって』以降を見る。",
+      "explanation": "本文は，性能だけでなく運用コストや相性などの制約を考慮すべきだと述べている。"
+    },
+    {
+      "id": "Q029",
+      "section": "verbal",
+      "category": "reading_extract",
+      "weaknessTarget": "長文抜き出し",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 130,
+      "answerType": "text",
+      "passage": "分析結果を意思決定に使う際には，結果の正確さだけでなく，その結果がどの程度不確実であるかを伝えることが重要である。不確実性を示さずに単一の結論だけを提示すると，受け手はその結論を過度に信頼してしまう可能性がある。",
+      "prompt": "本文中から，単一の結論だけを提示した場合に受け手が起こしうる反応を表す14字の表現を抜き出せ。",
+      "choices": [],
+      "correctAnswer": "過度に信頼してしまう",
+      "acceptableAnswers": [
+        "過度に信頼してしまう"
+      ],
+      "patternType": "長文抜き出し型",
+      "firstMove": "設問の言い換えに対応する箇所を本文から探す。",
+      "explanation": "『受け手はその結論を過度に信頼してしまう可能性がある』が該当箇所。"
+    },
+    {
+      "id": "Q030",
+      "section": "verbal",
+      "category": "reading_checkbox",
+      "weaknessTarget": "言語チェックボックス",
+      "difficultyIndicator": 7,
+      "timeLimitSec": 140,
+      "answerType": "multiple",
+      "passage": "チーム開発では，個々の実装力だけでなく，認識の共有が成果を左右する。仕様の理解がずれたまま作業を進めると，後から大きな修正が必要になる。一方で，初期段階で目的や制約を確認しておけば，各自の判断がそろいやすくなる。",
+      "prompt": "本文の内容と一致するものをすべて選べ。",
+      "choices": [
+        {
+          "id": "A",
+          "text": "チーム開発では認識共有が重要である"
+        },
+        {
+          "id": "B",
+          "text": "仕様の理解がずれると後の修正が増える可能性がある"
+        },
+        {
+          "id": "C",
+          "text": "個々の実装力は成果にまったく関係しない"
+        },
+        {
+          "id": "D",
+          "text": "目的や制約の確認は判断の統一に役立つ"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "patternType": "言語チェックボックス型",
+      "firstMove": "本文の表現と選択肢の強すぎる断定を照合する。",
+      "explanation": "Cは『まったく関係しない』が強すぎる。A,B,Dは本文と一致する。"
+    }
+  ]
+}
